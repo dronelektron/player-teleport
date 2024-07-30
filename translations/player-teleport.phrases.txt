@@ -3,6 +3,12 @@
     "Player teleported"
     {
         "#format"   "{1:t}"
-        "en"    "Player {1} teleported"
+        "en"    "Teleported {1}"
+    }
+
+    "Player goto"
+    {
+        "#format"   "{1:N}"
+        "en"    "Teleported to {1}"
     }
 }

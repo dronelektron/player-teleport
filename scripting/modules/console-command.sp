@@ -1,5 +1,6 @@
 void Command_Create() {
     RegAdminCmd("sm_teleport", Command_Teleport, ADMFLAG_GENERIC);
+    RegAdminCmd("sm_goto", Command_Goto, ADMFLAG_GENERIC);
 }
 
 public Action Command_Teleport(int client, int args) {
@@ -37,6 +38,26 @@ public Action Command_Teleport(int client, int args) {
 
     if (teleported) {
         MessageActivity_PlayerTeleported(client, targetName, isMultilingual);
+    }
+
+    return Plugin_Handled;
+}
+
+public Action Command_Goto(int client, int args) {
+    if (args < 1) {
+        Message_GotoUsage(client);
+
+        return Plugin_Handled;
+    }
+
+    char name[MAX_NAME_LENGTH];
+
+    GetCmdArg(1, name, sizeof(name));
+
+    int target = FindTarget(client, name);
+
+    if (target != CLIENT_NOT_FOUND && UseCase_Goto(client, target)) {
+        MessageActivity_PlayerGoto(client, target);
     }
 
     return Plugin_Handled;

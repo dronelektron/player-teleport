@@ -1,4 +1,24 @@
 bool UseCase_Teleport(int client, int target) {
+    bool teleported = Teleport(client, target);
+
+    if (teleported) {
+        MessageLog_PlayerTeleported(client, target);
+    }
+
+    return teleported;
+}
+
+bool UseCase_Goto(int client, int target) {
+    bool teleported = Teleport(target, client);
+
+    if (teleported) {
+        MessageLog_PlayerGoto(client, target);
+    }
+
+    return teleported;
+}
+
+static bool Teleport(int client, int target) {
     if (client == target) {
         return false;
     }
@@ -29,7 +49,6 @@ bool UseCase_Teleport(int client, int target) {
     }
 
     TeleportEntity(target, position, angles);
-    MessageLog_PlayerTeleported(client, target);
 
     return true;
 }

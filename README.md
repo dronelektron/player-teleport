@@ -18,3 +18,4 @@ Allows you to teleport players
 ### Console Commands
 
 * sm_teleport &lt;#userid|name&gt; - Teleport the player
+* sm_goto &lt;#userid|name&gt; - Go to the player
