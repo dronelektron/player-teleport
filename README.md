@@ -13,4 +13,8 @@ Allows you to teleport players
 ### Installation
 
 * Download latest [release](https://github.com/dronelektron/player-teleport/releases)
-* Extract `plugins` folder to `addons/sourcemod` folder of your server
+* Extract `plugins` and `translations` folders to `addons/sourcemod` folder of your server
+
+### Console Commands
+
+* sm_teleport &lt;#userid|name&gt; - Teleport the player

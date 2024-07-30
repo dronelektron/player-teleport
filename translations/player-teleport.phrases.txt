@@ -1,0 +1,8 @@
+"Phrases"
+{
+    "Player teleported"
+    {
+        "#format"   "{1:t}"
+        "en"    "Player {1} teleported"
+    }
+}

@@ -1,0 +1,7 @@
+"Phrases"
+{
+    "Player teleported"
+    {
+        "ru"    "Игрок {1} телепортирован"
+    }
+}
