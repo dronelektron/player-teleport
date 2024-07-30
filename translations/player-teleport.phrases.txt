@@ -1,0 +1,20 @@
+"Phrases"
+{
+    "Player teleported"
+    {
+        "#format"   "{1:t}"
+        "en"    "Teleported {1}"
+    }
+
+    "Player goto"
+    {
+        "#format"   "{1:N}"
+        "en"    "Teleported to {1}"
+    }
+
+    "Player send"
+    {
+        "#format"   "{1:t},{2:N}"
+        "en"    "Teleported {1} to {2}"
+    }
+}
