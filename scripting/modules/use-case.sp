@@ -18,6 +18,16 @@ bool UseCase_Goto(int client, int target) {
     return teleported;
 }
 
+bool UseCase_Send(int client, int target1, int target2) {
+    bool teleported = Teleport(target1, target2);
+
+    if (teleported) {
+        MessageLog_PlayerSend(client, target1, target2);
+    }
+
+    return teleported;
+}
+
 static bool Teleport(int client, int target) {
     if (client == target) {
         return false;

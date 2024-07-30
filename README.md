@@ -17,5 +17,6 @@ Allows you to teleport players
 
 ### Console Commands
 
-* sm_teleport &lt;#userid|name&gt; - Teleport the player
-* sm_goto &lt;#userid|name&gt; - Go to the player
+* sm_teleport &lt;#userid|name&gt; - Teleport players to yourself
+* sm_goto &lt;#userid|name&gt; - Teleport to the player
+* sm_send &lt;#userid|name&gt; &lt;#userid|name&gt; - Teleport players to another player

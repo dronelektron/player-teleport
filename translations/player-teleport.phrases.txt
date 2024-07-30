@@ -11,4 +11,10 @@
         "#format"   "{1:N}"
         "en"    "Teleported to {1}"
     }
+
+    "Player send"
+    {
+        "#format"   "{1:t},{2:N}"
+        "en"    "Teleported {1} to {2}"
+    }
 }
