@@ -29,36 +29,28 @@ bool UseCase_Send(int client, int target1, int target2) {
 }
 
 static bool Teleport(int client, int target) {
-    if (client == target) {
+    if (client == target || !IsPlayerAlive(client) || !IsPlayerAlive(target)) {
         return false;
     }
 
-    if (!IsPlayerAlive(client)) {
-        return false;
-    }
-
-    if (!IsPlayerAlive(target)) {
-        return false;
-    }
-
-    float position[3];
+    float origin[3];
     float angles[3];
 
-    GetClientAbsOrigin(client, position);
+    GetClientAbsOrigin(client, origin);
     GetClientAbsAngles(client, angles);
 
     int clientTeam = GetClientTeam(client);
     int targetTeam = GetClientTeam(target);
 
     if (clientTeam != targetTeam) {
-        float maxBounds[3];
+        float maxs[3];
 
-        GetClientMaxs(client, maxBounds);
+        GetClientMaxs(client, maxs);
 
-        position[Z] += maxBounds[Z] + 1.0;
+        origin[Z] += maxs[Z] + 1.0;
     }
 
-    TeleportEntity(target, position, angles);
+    TeleportEntity(target, origin, angles);
 
     return true;
 }
